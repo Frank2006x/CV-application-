@@ -1,0 +1,24 @@
+.main{
+    display: flex;
+    
+}
+.page {
+    box-sizing: border-box;
+    width: 80rem;
+    height: 130vh;
+    margin: 2rem 5rem;
+    background-color: white;
+    text-align: center;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+body {
+    background-color: #f9f9f9;
+}
+
+
+.sidebar{
+    margin-left: 5rem;
+}
