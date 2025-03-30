@@ -1,0 +1,59 @@
+form{
+    display: flex;
+    flex-direction: column;
+}
+input{
+    width: 15rem;
+}
+.drop-down{
+    background-color: transparent;
+    outline: none;
+    border: none;
+}
+
+.head-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+.edu{
+    width: 20rem;
+}
+
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeInAnimation 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeInAnimation {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-out{
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: fadeOutAnimation 0.5s ease-in-out backwards;
+}
+
+@keyframes fadeOutAnimation {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+.submit{
+    width: 25%;
+    
+}
