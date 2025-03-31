@@ -1,33 +1,19 @@
 import '../css/experience.css';
-import { useState } from 'react';
 
-function Experience() {
 
-    const [vis,setVis]=useState(false);
-    const [isFadeOut,setIsFadeOut]=useState(false);
-    const handleClick=()=>{
-        if (vis){
-            setIsFadeOut(true);
-            setTimeout(()=>{
-                setVis(false)
-            },500)
-        }else{
-            setVis(true);
-            setIsFadeOut(false);
+function Experience({ isOpen, onToggle }) {
 
-        }
-    }
-
+    
     return (
         <div className="exp" >
 
             <div className='head-wrapper'>
                 <h1>Experience</h1>
-                <button className='drop-down' onClick={handleClick}>
+                <button className='drop-down' onClick={()=>{onToggle()}}>
                     <img src="/src/assets/down-arrow.svg" alt="icon" width="40" height="40" />
                 </button>
             </div>
-            { vis && <form className={isFadeOut ? "fade-out" : "fade-in"}>
+            { isOpen && <form>
                 <label htmlFor="company-name">Company name: </label>
                 <input type="text" id="company-name" placeholder="Company name" className="company-name" required />
 
