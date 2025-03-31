@@ -19,7 +19,7 @@ function Experience() {
     }
 
     return (
-        <div className="experience" >
+        <div className="exp" >
 
             <div className='head-wrapper'>
                 <h1>Experience</h1>

@@ -1,4 +1,30 @@
 hr{
-    border: 3px solid rgb(59, 59, 255);
+    border: 1px solid rgb(59, 59, 255);
     opacity: 1;
+    overflow: hidden;
+}
+.page-name{
+    text-decoration: underline;
+    text-decoration-color: rgb(95, 119, 254);
+}
+.education ,.experience{
+    background-color: #effcfd;
+    border: 1px solid #b2ebf2;
+    border-radius: 8px;
+    padding: 1rem;
+    width: 15rem;
+    line-height: 1.5;
+    text-align: start;
+    font-size: medium;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.edit-btn{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 5px;
+    z-index: 5; 
 }
