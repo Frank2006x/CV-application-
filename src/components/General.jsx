@@ -24,7 +24,7 @@ function General() {
             <div className='head-wrapper'>
                 <h1>General</h1>
                 <button className='drop-down' onClick={handleClick}>
-                    <img src="/src/assets/down-arrow.svg" alt="icon" width="40" height="40" />
+                    <img src="/src/assets/down-arrow.svg" alt="icon" width="40" height="40"  />
                 </button>
             </div>
             { vis && <form className={isFadeOut ? "fade-out" : "fade-in"}>
