@@ -1,10 +1,8 @@
 import '../css/general.css';
 
 
-function General({ isOpen, onToggle }) {
-
+function General({ isOpen, onToggle,name,email,phoneNo,setName,setEmail,setPhoneNo }) {
     
-
     return (
         <div className="general" >
 
@@ -14,12 +12,17 @@ function General({ isOpen, onToggle }) {
                     <img src="/src/assets/down-arrow.svg" alt="icon" width="40" height="40"  />
                 </button>
             </div>
-            { isOpen  && <form >
+            { isOpen  && <form onSubmit={(e)=>{
+                e.preventDefault();
+                setName("");
+                setEmail("");
+                setPhoneNo("");
+            }}>
                 <label htmlFor="name">Name: </label>
-                <input type="text" id="name" placeholder="name" className="name" required />
+                <input type="text" id="name" placeholder="name" className="name"  value={name}  onChange={(e)=>{setName(e.target.value)}} required />
 
                 <label htmlFor="email">Email: </label>
-                <input type="email" id="email" placeholder="email" className="email" required />
+                <input type="email" id="email" placeholder="email" className="email" value={email} onChange={(e)=>{setEmail(e.target.value)}} required />
 
                 <label htmlFor="phone">Phone Number: </label>
                 <input
@@ -28,10 +31,12 @@ function General({ isOpen, onToggle }) {
                     placeholder="phone"
                     className="phone"
                     pattern="[0-9]{10}"
+                    value={phoneNo}
+                    onChange={(e)=>{setPhoneNo(e.target.value)}}
                     required
                 />
 
-                <button type='submit' className='submit'>Save</button>
+                <button type='submit' className='submit' >Save</button>
             </form>
             }
             

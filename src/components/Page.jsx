@@ -2,15 +2,37 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import '../css/page.css'
 import { useState } from "react";
 
-function PageHeader(){
+function PageHeader({name, email, phoneNo}) {
+    // const [storeName,setStoreName]=useState("");
+    // const [storeEmail,setStoreEmail]=useState("");
+    // const [storePhoneNo,setStorePhoneNo]=useState("");
+    // if (name.trim()!==""){
+    //     setStoreName(name);
+    // }
+    
+    //use effect to work with it
+    if (name.trim()!=""){
+        localStorage.setItem("name",name.trim());
+    }
+    if (email.trim()!=""){
+        localStorage.setItem("email",email.trim());
+    }
+    if (phoneNo.trim()!=""){
+        localStorage.setItem("phoneNo",phoneNo.trim());
+    }
+    const storeName=localStorage.getItem("name");
+    const storeEmail=localStorage.getItem("email");
+    const storePhoneNo=localStorage.getItem("phoneNo");
+    
+
     return(
         <div className="page-header">
 
 
-            <h2 className="mb-5 mt-3 page-name">Frank Xavio</h2>
+            <h2 className="mb-5 mt-3 page-name">{storeName}</h2>
             <div className="d-flex flex-direction-column justify-content-between ">
-                <p className="ms-4">Email: frank2006@gmail.com</p>
-                <p className="me-4">Phone no: 3205932590</p>
+                <p className="ms-4">Email : {storeEmail}</p>
+                <p className="me-4">Phone no : {storePhoneNo}</p>
             </div>
             <hr/>
         </div>
@@ -51,11 +73,15 @@ function Experience(){
     )
 }
 
-function Page() {
+function Page({name,email,phoneNo}) {
     
     return (
         <div className="page">
-            <PageHeader/>    
+            <PageHeader 
+                name={name}
+                email={email}
+                phoneNo={phoneNo}
+            />    
             <div className="page-education">
                 <h2>Education Qualification</h2>
 
@@ -71,6 +97,7 @@ function Page() {
                     <Experience/>
                     <Experience/>
                     <Experience/>
+                    
 
                 </div>
             </div>

@@ -6,6 +6,11 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
+  //General
+  const [name,setName]=useState("");
+  const [email,setEmail]=useState("");
+  const [phoneNo,setPhoneNo]=useState("");
+
   const[openSection,setOpenSection]=useState(null);
   const handleSectionToggle=(section)=>{
     console.log('Currently open section:', openSection);
@@ -19,6 +24,12 @@ function App() {
         <General
           isOpen={openSection === 'General'}
           onToggle={() => handleSectionToggle('General')}
+          name={name}
+          setName={setName}
+          email={email}
+          setEmail={setEmail}
+          phoneNo={phoneNo}
+          setPhoneNo={setPhoneNo}
         />
         <Education
           isOpen={openSection === 'Education'}
@@ -29,7 +40,11 @@ function App() {
           onToggle={() => handleSectionToggle('Experience')}
         />
       </div>
-      <Page/>
+      <Page 
+        name={name}
+        email={email}
+        phoneNo={phoneNo}
+      />
     </div>
     
 
