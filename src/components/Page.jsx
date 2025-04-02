@@ -3,14 +3,7 @@ import '../css/page.css'
 import { useState } from "react";
 
 function PageHeader({name, email, phoneNo}) {
-    // const [storeName,setStoreName]=useState("");
-    // const [storeEmail,setStoreEmail]=useState("");
-    // const [storePhoneNo,setStorePhoneNo]=useState("");
-    // if (name.trim()!==""){
-    //     setStoreName(name);
-    // }
     
-    //use effect to work with it
     if (name.trim()!=""){
         localStorage.setItem("name",name.trim());
     }
@@ -40,13 +33,13 @@ function PageHeader({name, email, phoneNo}) {
     )
 
 }
-function Education(){
+function Education({schoolName,titleStudy,year}){
     const [showEdit,setShowEdit]=useState(false);
     return (
         <div className="education" onMouseEnter={() => setShowEdit(true)} onMouseLeave={()=>setShowEdit(false)}>
-            <p className="school-name">School Name : vit chennai</p>
-            <p className="title-study">Title of study : B.Tech</p>
-            <p className="year-completion m-1">Year of completion : 2024 </p>
+            <p className="school-name">School Name : {schoolName}</p>
+            <p className="title-study">Title of study : {titleStudy}</p>
+            <p className="year-completion m-1">Year of completion : {year}</p>
             
             {showEdit && <button className="edit-btn">
                 <img src="src/assets/edit.svg" width="20"></img>
@@ -73,7 +66,8 @@ function Experience(){
     )
 }
 
-function Page({name,email,phoneNo}) {
+function Page({name,email,phoneNo,eduList}) {
+    
     
     return (
         <div className="page">
@@ -86,7 +80,9 @@ function Page({name,email,phoneNo}) {
                 <h2>Education Qualification</h2>
 
                 <div className="education-wrapper row g-5 mt-1 d-flex justify-content-evenly">
-                    <Education />
+                { eduList.map(item=>(
+                        <Education schoolName={item.schoolName} titleStudy={item.titleStudy} year={item.year}/>
+                    ))}
                     
                 </div>
                 <hr/>
@@ -94,9 +90,7 @@ function Page({name,email,phoneNo}) {
             <div className="page-experience">
                 <h2>Work Experience</h2>
                 <div className="experience-wrapper row g-5 mt-1 d-flex justify-content-evenly">
-                    <Experience/>
-                    <Experience/>
-                    <Experience/>
+                    
                     
 
                 </div>

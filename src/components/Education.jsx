@@ -1,10 +1,24 @@
+import { useState } from 'react';
 import '../css/education.css';
 
 
-function Education({ isOpen, onToggle }) {
-
+function Education({ isOpen, onToggle ,eduList,setEduList}) {
+    // let schoolName,titleStudy,year;
+    const [schoolName,setSchoolName]=useState("");
+    const [titleStudy,setTitleStudy]=useState("");
+    const [year,setYear]=useState("");
     
-
+    function handleSave(){
+        const eduItem={"schoolName":schoolName,"titleStudy":titleStudy,"year":year};
+        setEduList([...eduList,eduItem])
+        console.log(eduItem);
+        console.log(eduList);
+        setSchoolName("");
+        setTitleStudy("");
+        setYear("");
+        
+    
+    }
     return (
         <div className="edu" >
 
@@ -14,12 +28,15 @@ function Education({ isOpen, onToggle }) {
                     <img src="/src/assets/down-arrow.svg" alt="icon" width="40" height="40" />
                 </button>
             </div>
-            { isOpen && <form >
+            { isOpen && <form onSubmit={(e)=>{
+                e.preventDefault();
+                handleSave()
+                }} >
                 <label htmlFor="school-name">School name : </label>
-                <input type="text" id="school-name" placeholder="school name" className="school-name" required />
+                <input type="text" id="school-name" placeholder="school name" value={schoolName} className="school-name" required onChange={(e)=>{setSchoolName(e.target.value)}} />
 
                 <label htmlFor="title-study">Title of study : </label>
-                <input type="text" id="title-study" placeholder="Title of study" className="email" required />
+                <input type="text" id="title-study" placeholder="Title of study" className="email" value={titleStudy}  onChange={(e)=>{setTitleStudy(e.target.value)}} required />
 
                 <label htmlFor="year">Year of completion : </label>
                 <input
@@ -28,6 +45,8 @@ function Education({ isOpen, onToggle }) {
                     placeholder="year of completion"
                     className="year"
                     pattern="[0-9]{4}"
+                    onChange={(e)=>{setYear(e.target.value)}}
+                    value={year}
                     required
                 />
 

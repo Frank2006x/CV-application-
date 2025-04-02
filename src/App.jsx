@@ -10,6 +10,7 @@ function App() {
   const [name,setName]=useState("");
   const [email,setEmail]=useState("");
   const [phoneNo,setPhoneNo]=useState("");
+  const [eduList,setEduList]=useState([]);
 
   const[openSection,setOpenSection]=useState(null);
   const handleSectionToggle=(section)=>{
@@ -34,6 +35,8 @@ function App() {
         <Education
           isOpen={openSection === 'Education'}
           onToggle={() => handleSectionToggle('Education')}
+          eduList={eduList}
+          setEduList={setEduList}
         />
         <Experience
           isOpen={openSection === 'Experience'}
@@ -44,6 +47,8 @@ function App() {
         name={name}
         email={email}
         phoneNo={phoneNo}
+        eduList={eduList}
+
       />
     </div>
     
