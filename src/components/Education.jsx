@@ -11,8 +11,8 @@ function Education({ isOpen, onToggle ,eduList,setEduList}) {
     function handleSave(){
         const eduItem={"schoolName":schoolName,"titleStudy":titleStudy,"year":year};
         setEduList([...eduList,eduItem])
-        console.log(eduItem);
-        console.log(eduList);
+        // console.log(eduItem);
+        // console.log(eduList);
         setSchoolName("");
         setTitleStudy("");
         setYear("");

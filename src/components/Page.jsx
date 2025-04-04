@@ -49,13 +49,13 @@ function Education({schoolName,titleStudy,year}){
         </div>
     )
 }
-function Experience(){
+function Experience({companyName,positionTitle,year}){
     const [showEdit,setShowEdit]=useState(false);
     return (
         <div className="experience" onMouseEnter={() => setShowEdit(true)} onMouseLeave={()=>setShowEdit(false)}>
-            <p className="company-name">Company : vit chennai</p>
-            <p className="position-title">Position title : Teacher</p>
-            <p className="year-experience m-1">Year of experience : 4 </p>
+            <p className="company-name">Company : {companyName}</p>
+            <p className="position-title">Position title : {positionTitle}</p>
+            <p className="year-experience m-1">Year of experience : {year}</p>
             
             {showEdit && <button className="edit-btn">
                 <img src="src/assets/edit.svg" width="20"></img>
@@ -66,7 +66,7 @@ function Experience(){
     )
 }
 
-function Page({name,email,phoneNo,eduList}) {
+function Page({name,email,phoneNo,eduList,expList}) {
     
     
     return (
@@ -90,7 +90,9 @@ function Page({name,email,phoneNo,eduList}) {
             <div className="page-experience">
                 <h2>Work Experience</h2>
                 <div className="experience-wrapper row g-5 mt-1 d-flex justify-content-evenly">
-                    
+                    {expList.map((item)=>(
+                        <Experience companyName={item.companyName} positionTitle={item.positionTitle} year={item.year}/>
+                    ))}
                     
 
                 </div>
