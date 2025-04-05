@@ -2,16 +2,17 @@ import '../css/experience.css';
 import { useState } from 'react';
 
 
-function Experience({ isOpen, onToggle ,expList,setExpList}) {
+function Experience({ isOpen, onToggle ,expList,setExpList,expId,setExpId}) {
     const [companyName,setCompanyName]=useState("");
     const [positionTitle,setPositionTitle]=useState("");
     const [year,setYear]=useState("");
     function handleSave(){
-        const expItem={"companyName":companyName,"positionTitle":positionTitle,"year":year};
+        const expItem={"id":expId,"companyName":companyName,"positionTitle":positionTitle,"year":year};
         setExpList([...expList,expItem]);
         setCompanyName("");
         setPositionTitle("")
         setYear("");
+        setExpId(expId+1)
     }
 
     return (

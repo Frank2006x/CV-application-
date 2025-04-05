@@ -2,6 +2,7 @@ import Experience from './components/Experience'
 import General from './components/General'
 import Education from './components/Education'
 import Page from './components/page'
+import Header from './components/Header'
 import { useState } from 'react'
 import './App.css'
 
@@ -10,8 +11,12 @@ function App() {
   const [name,setName]=useState("");
   const [email,setEmail]=useState("");
   const [phoneNo,setPhoneNo]=useState("");
+  const [expId,setExpId]=useState(0);
+  const [eduId,setEduId]=useState(0);
+
   const [eduList,setEduList]=useState([]);
   const [expList,setExpList]=useState([]);
+  
 
   const[openSection,setOpenSection]=useState(null);
   const handleSectionToggle=(section)=>{
@@ -21,6 +26,8 @@ function App() {
 
 
   return (
+    <div className='full'>
+    <Header/>
     <div className='main'>
       <div className="sidebar">
         <General
@@ -32,19 +39,25 @@ function App() {
           setEmail={setEmail}
           phoneNo={phoneNo}
           setPhoneNo={setPhoneNo}
-        />
+          />
         <Education
           isOpen={openSection === 'Education'}
           onToggle={() => handleSectionToggle('Education')}
           eduList={eduList}
           setEduList={setEduList}
-        />
+          eduId={eduId}
+          setEduId={setEduId}
+          />
         <Experience
           isOpen={openSection === 'Experience'}
           onToggle={() => handleSectionToggle('Experience')}
           expList={expList}
           setExpList={setExpList}
-        />
+          expId={expId}
+          setExpId={setExpId}
+          
+          
+          />
       </div>
       <Page 
         name={name}
@@ -52,8 +65,12 @@ function App() {
         phoneNo={phoneNo}
         eduList={eduList}
         expList={expList}
-
-      />
+        setEduList={setEduList}
+        setExpList={setExpList}
+        
+        
+        />
+    </div>
     </div>
     
 

@@ -21,4 +21,9 @@ body {
 
 .sidebar{
     margin-left: 5rem;
+    margin-top: 6rem;
+}
+.full{
+    display: flex;
+    flex-direction: column;
 }

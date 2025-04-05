@@ -1,0 +1,50 @@
+.cv-header {
+    background: linear-gradient(135deg, #4169E1, #5A7CED); /* Royal Blue gradient */
+    color: white;
+    padding: 40px 0;
+    text-align: center;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    animation: slideIn 1s ease-out;
+  }
+  
+  .cv-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    display: inline-block;
+  }
+  
+  .underline-accent {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background-color: white;
+    margin: 10px auto 0;
+    border-radius: 2px;
+    animation: expand 1s ease-out 0.5s forwards;
+    opacity: 0;
+  }
+  
+  /* Animations */
+  @keyframes slideIn {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes expand {
+    to {
+      width: 100px;
+      opacity: 1;
+    }
+  }
+  

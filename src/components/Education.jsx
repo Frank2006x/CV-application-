@@ -2,20 +2,21 @@ import { useState } from 'react';
 import '../css/education.css';
 
 
-function Education({ isOpen, onToggle ,eduList,setEduList}) {
+function Education({ isOpen, onToggle ,eduList,setEduList,eduId,setEduId}) {
     // let schoolName,titleStudy,year;
     const [schoolName,setSchoolName]=useState("");
     const [titleStudy,setTitleStudy]=useState("");
     const [year,setYear]=useState("");
     
     function handleSave(){
-        const eduItem={"schoolName":schoolName,"titleStudy":titleStudy,"year":year};
+        const eduItem={"id":eduId,"schoolName":schoolName,"titleStudy":titleStudy,"year":year};
         setEduList([...eduList,eduItem])
         // console.log(eduItem);
         // console.log(eduList);
         setSchoolName("");
         setTitleStudy("");
         setYear("");
+        setEduId(eduId+1);
         
     
     }
