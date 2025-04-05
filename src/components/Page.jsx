@@ -43,14 +43,14 @@ function Education({ id, schoolName, titleStudy, year, eduList, setEduList }) {
     function handleDelete(){
         
         const updatedList=eduList.filter((edu)=>edu.id !== id);
-        console.log("updted list",updatedList)
+        
         setEduList(updatedList);
         setShowPopUp(false);
 
     }
     function handleEdit() {
       setShowPopUp(true);
-      console.log(eduList)
+      
     }
   
     function handleSaveEdit() {
@@ -80,7 +80,7 @@ function Education({ id, schoolName, titleStudy, year, eduList, setEduList }) {
   
         {showEdit && (
           <button className="edit-btn" onClick={handleEdit}>
-            <img src="src/assets/edit.svg" width="20" />
+            <img src="/icons/edit.svg" width="20" />
           </button>
         )}
   
@@ -88,7 +88,7 @@ function Education({ id, schoolName, titleStudy, year, eduList, setEduList }) {
           createPortal(
             <div className="pop">
               <button className="close-btn" onClick={() => setShowPopUp(false)}>
-                <img src="src/assets/close.svg" alt="close" />
+                <img src="/icons/close.svg" alt="close" />
               </button>
   
               <label>
@@ -173,13 +173,14 @@ function Experience({id,companyName,positionTitle,year,expList,setExpList}){
             <p className="year-experience m-1">Year of experience : {year}</p>
             
             {showEdit && <button className="edit-btn" onClick={()=>handleEdit()}>
-                <img src="src/assets/edit.svg" width="20"></img>
+                <img src="/icons/edit.svg" width="20" />
             </button>
             }
             {showPopUp && createPortal(
                 <div className="pop">
                 <button className="close-btn" onClick={() => setShowPopUp(false)}>
-                  <img src="src/assets/close.svg" alt="close" />
+                    <img src="/icons/close.svg" alt="close" />
+
                 </button>
           
                 <label>

@@ -20,7 +20,7 @@ function App() {
 
   const[openSection,setOpenSection]=useState(null);
   const handleSectionToggle=(section)=>{
-    console.log('Currently open section:', openSection);
+  
     setOpenSection((prevSection)=>(prevSection===section)?null:section);
   }
 

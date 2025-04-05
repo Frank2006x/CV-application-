@@ -9,7 +9,7 @@ function General({ isOpen, onToggle,name,email,phoneNo,setName,setEmail,setPhone
             <div className='head-wrapper'>
                 <h1>General</h1>
                 <button className='drop-down' onClick={()=>{onToggle()}}>
-                    <img src="/src/assets/down-arrow.svg" alt="icon" width="40" height="40"  />
+                <img src="/icons/down-arrow.svg" alt="icon" width="40" height="40" />
                 </button>
             </div>
             { isOpen  && <form onSubmit={(e)=>{

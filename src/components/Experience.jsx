@@ -21,7 +21,7 @@ function Experience({ isOpen, onToggle ,expList,setExpList,expId,setExpId}) {
             <div className='head-wrapper'>
                 <h1>Experience</h1>
                 <button className='drop-down' onClick={()=>{onToggle()}}>
-                    <img src="/src/assets/down-arrow.svg" alt="icon" width="40" height="40" />
+                <img src="/icons/down-arrow.svg" alt="icon" width="40" height="40" />
                 </button>
             </div>
             { isOpen && <form onSubmit={
