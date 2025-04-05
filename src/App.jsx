@@ -1,7 +1,7 @@
 import Experience from './components/Experience'
 import General from './components/General'
 import Education from './components/Education'
-import Page from './components/page'
+import Page from './components/Page'
 import Header from './components/Header'
 import { useState } from 'react'
 import './App.css'
