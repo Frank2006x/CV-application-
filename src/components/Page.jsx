@@ -86,6 +86,7 @@ function Education({ id, schoolName, titleStudy, year, eduList, setEduList }) {
   
         {showPopUp &&
           createPortal(
+            <div id="popUp">
             <div className="pop">
               <button className="close-btn" onClick={() => setShowPopUp(false)}>
                 <img src="/icons/close.svg" alt="close" />
@@ -127,6 +128,7 @@ function Education({ id, schoolName, titleStudy, year, eduList, setEduList }) {
               <button className="delete-btn" onClick={()=>{handleDelete()}}>
                 Delete
               </button>
+            </div>
             </div>,
             document.querySelector("body")
           )}
@@ -177,6 +179,7 @@ function Experience({id,companyName,positionTitle,year,expList,setExpList}){
             </button>
             }
             {showPopUp && createPortal(
+                <div id="popUp">
                 <div className="pop">
                 <button className="close-btn" onClick={() => setShowPopUp(false)}>
                     <img src="/icons/close.svg" alt="close" />
@@ -203,6 +206,8 @@ function Experience({id,companyName,positionTitle,year,expList,setExpList}){
           
                 <button className="save-btn" onClick={()=>{handleSaveEdit()}}>Save</button>
                 <button className="delete-btn" onClick={handleDelete}>Delete</button>
+              </div>
+
               </div>,
               document.querySelector("body")
             )}
